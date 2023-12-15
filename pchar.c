@@ -9,19 +9,22 @@
 
 void op_pchar(stack_t **sp)
 {
-    if (*sp)
-    {
-        if ((*sp)->n >= 0 && (*sp)->n < 128)
-        {
-            printf("%c\n", isprint((*sp)->n) ? (*sp)->n : '?');
-        }
-        else
-        {
-            fprintf(stderr, "L%lu: can't pchar, value out of printable ASCII range\n", (unsigned long)op_env.lineno);
-        }
-    }
-    else
-    {
-        fprintf(stderr, "L%lu: can't pchar, stack empty\n", (unsigned long)op_env.lineno);
-    }
+	if (*sp)
+	{
+		if ((*sp)->n >= 0 && (*sp)->n < 128)
+	{
+		printf("%c\n", isprint((*sp)->n) ? (*sp)->n : '?');
+	}
+		else
+	{
+		fprintf(stderr, "L%lu: can't pchar, value out of printable ASCII range\n",
+		(unsigned long)op_env.lineno);
+	}
+
+	}
+		else
+	{
+		fprintf(stderr, "L%lu: can't pchar, stack empty\n",
+		(unsigned long)op_env.lineno);
+	}
 }

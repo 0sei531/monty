@@ -7,8 +7,8 @@
 
 void op_rotl(stack_t **sp)
 {
-	 if (*sp && (*sp)->next)
-    {
-        *sp = (*sp)->next;
-    }
+	if (*sp && (*sp)->next)
+	{
+	*sp = (*sp)->next;
+	}
 }

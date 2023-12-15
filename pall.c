@@ -10,13 +10,13 @@ void op_pall(stack_t **sp)
 {
 	stack_t *p = NULL;
 
-    if (*sp)
-    {
-        (*sp)->next->prev = NULL;
+	if (*sp)
+	{
+		(*sp)->next->prev = NULL;
 
-        for (p = *sp; p; p = p->prev)
-            printf("%d\n", p->n);
+		for (p = *sp; p; p = p->prev)
+			printf("%d\n", p->n);
 
-        (*sp)->next->prev = *sp;
-    }
+		(*sp)->next->prev = *sp;
+	}
 }

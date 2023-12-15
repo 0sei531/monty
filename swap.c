@@ -8,15 +8,15 @@
 
 void op_swap(stack_t **sp)
 {
-	 int tmp;
+	int tmp;
 
-    if (!(*sp && (*sp)->next))
-    {
-        fprintf(stderr, "L%lu: can't swap, stack too short\n", op_env.lineno);
-        return;
-    }
+	if (!(*sp && (*sp)->next))
+	{
+		fprintf(stderr, "L%lu: can't swap, stack too short\n", op_env.lineno);
+		return;
+	}
 
-    tmp = (*sp)->n;
-    (*sp)->n = (*sp)->next->n;
-    (*sp)->next->n = tmp;
+		tmp = (*sp)->n;
+		(*sp)->n = (*sp)->next->n;
+		(*sp)->next->n = tmp;
 }

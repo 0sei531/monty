@@ -11,17 +11,17 @@ void op_pstr(stack_t **sp)
 {
 	stack_t *p = NULL;
 
-    if (*sp)
-    {
-        (*sp)->next->prev = NULL;
+	if (*sp)
+	{
+	(*sp)->next->prev = NULL;
 
-        for (p = *sp; p && isprint(p->n); p = p->prev)
-        {
-            fputc(p->n, stderr);
-        }
+	for (p = *sp; p && isprint(p->n); p = p->prev)
+	{
+		fputc(p->n, stderr);
+	}
 
-        (*sp)->next->prev = *sp;
-    }
+		(*sp)->next->prev = *sp;
+	}
 
-    fputc('\n', stderr);
+		fputc('\n', stderr);
 }

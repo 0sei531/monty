@@ -10,15 +10,16 @@ void op_sub(stack_t **sp)
 {
 	int to_sub = 0;
 
-    if (!(*sp && *sp != (*sp)->next))
-    {
-        fprintf(stderr, "L%lu: can't sub, stack too short\n", (unsigned long)op_env.lineno);
-    }
+	if (!(*sp && *sp != (*sp)->next))
+	{
+		fprintf(stderr, "L%lu: can't sub, stack too short\n",
+		(unsigned long)op_env.lineno);
+	}
 
-    to_sub = (*sp)->n;
+	to_sub = (*sp)->n;
 
-    op_pop(sp);
+	op_pop(sp);
 
-    (*sp)->n -= to_sub;
+	(*sp)->n -= to_sub;
 
 }
